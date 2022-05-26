@@ -1,0 +1,50 @@
+.siteHeader{
+    // border: 4px solid black;
+    background-color: brown;
+    
+    &-content{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+
+
+        padding: 0px 20px;
+
+        &-title{
+            padding: 0;
+            margin: 0;
+
+        }
+        &-btn{
+        display: flex;
+
+        align-items: center;
+
+
+
+        }
+
+    }
+    &-siteNav{
+        &-ul{
+            list-style-type: none;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding: 0px 20px;
+            margin: 0;
+            background-color: #21abcd;
+            &-li{
+
+            }
+        }
+
+    }
+}
+
+.siteBody {
+    margin: 0;
+    background-color: bisque;
+}
+

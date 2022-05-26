@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="../styles/styles.css">
+        <title><?php echo $h1title;  ?></title>
+    </head>
+    <body class="siteBody">
+        <header class="siteHeader">
+            <div class="siteHeader-content" >
+                <h1 class="siteHeader-content-title"> <?php echo htmlspecialchars($h1title);?> </h1>
+                
+                <?php if (isConnected()):  ?>
+                    <div class="siteHeader-content-greeting">
+                        <p class="siteHeader-content-greeting-para">Hello <?= htmlspecialchars($_SESSION['user']['firstname']);?></p>
+                    </div>
+                    <div class="siteHeader-content-btn">
+                        <a href="logout.php" >
+                            <input type="submit" value="Se déconnecter">
+                        </a>
+                    </div>
+                <?php endif; ?>
+            </div> 
+            <nav class="siteHeader-siteNav">
+                <ul class="siteHeader-siteNav-ul">
+                    <li class="siteHeader-siteNav-ul-li">
+                        <a href="home.php">home</a>
+                    </li>
+                    <?php if (!isConnected()):  ?>
+                        <li class="siteHeader-siteNav-ul-li">
+                            <a href="sign_in.php">sign in</a>
+                        </li>
+                        <li class="siteHeader-siteNav-ul-li">
+                            <a href="sign_up.php">sign up</a>
+                        </li>
+                    <?php endif; ?>
+                    <?php if (isConnected()):  ?>
+                        <li class="siteHeader-siteNav-ul-li">
+                            <a href="admin.php">Dashboard</a></li>
+                        <li class="siteHeader-siteNav-ul-li">
+                            <a href="add_article.php">add article</a></li>
+                    <?php endif; ?>
+                </ul>
+            </nav>
+                
+        </header>
+
+
+
+<?php
+    include "../templates/".$template.'.phtml';
+?>
+</html>

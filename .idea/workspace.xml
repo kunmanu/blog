@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="50122137-e589-4468-976f-ca0aa7e87aea" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/app/config.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/01_Database/database.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/02_Users/users.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/03_tables/createtables.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/04_datas/insertData.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/db/05_script/queries.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lib/functions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/add_article.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/admin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/article.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/delete_article.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/delete_article_ajax.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/edit_article.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/home.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/10.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/11.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/12.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/13.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/14.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/15.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/16.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/3.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/4.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/7.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/9.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/admin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/logout.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/sign_in.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/sign_up.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Core/Database.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/ArticleModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/Autoload.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/CommentModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Model/UserModel.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/styles.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/styles/styles.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/add_article.phtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/admin.phtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/article.phtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base.phtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/base_admin.phtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/edit_article.phtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/home.phtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/sign_in.phtml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/sign_up.phtml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="29i2ZNEl6G0aWqYoDKGCfwLb8FN" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;,
+      &quot;mysql&quot;
+    ]
+  }
+}</component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="50122137-e589-4468-976f-ca0aa7e87aea" name="Changes" comment="" />
+      <created>1653581646424</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1653581646424</updated>
+      <workItem from="1653581649065" duration="1478000" />
+      <workItem from="1653591837626" duration="4020000" />
+      <workItem from="1653596133530" duration="446000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

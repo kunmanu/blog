@@ -1,0 +1,51 @@
+<body>
+    <main>
+        <form action="sign_up.php" method="POST" >
+            <fieldset>
+                <legend>Créer un compte</legend>
+                
+                <div>
+                    <label for="name">votre nom : </label><br>
+                    <input type="text" id="name" name="name"><br>
+                    
+                    <?php if (isset($errors['name'])): ?>
+                        <p class="error"><?=$errors['name'];?></p>
+                    <?php endif; ?>
+                </div>
+                
+                <div>  
+                    <label for="surname">votre prenom : </label><br>
+                    <input type="text" id="surname" name="surname"><br>
+                    <?php if (isset($errors['surname'])): ?>
+                        <p class="error"><?=$errors['surname'];?></p>
+                    <?php endif; ?>
+                </div>
+                <div>  
+                    <label for="email">votre email : </label><br>
+                    <input type="email" id="email" name="email"><br>
+                    <?php if (isset($errors['email'])): ?>
+                        <p class="error"><?=$errors['email'];?></p>
+                    <?php endif; ?>
+                </div>
+                <div>
+                    <label for="pass">votre mot de passe : </label><br>
+                    <input type="password" id="pass" name="pass"><br>
+                    <?php if (isset($errors['pass'])): ?>
+                        <p class="error"><?=$errors['pass'];?></p>
+                    <?php endif; ?>
+                </div>
+                <div>
+                    <label for="pass">confirmez votre mot de passe : </label><br>
+                    <input type="password" id="confirmPass" name="confirmPass"><br>
+                    <?php if (isset($errors['confirmPass'])): ?>
+                        <p class="error"><?=$errors['confirmPass'];?></p>
+                    <?php endif; ?>
+                </div>
+                <div>
+                    <input type="submit" value="Créer un compte">
+                </div>
+            </fieldset>
+        </form>
+
+    </main>
+</body>

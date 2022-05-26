@@ -1,0 +1,36 @@
+<body>
+    <main>
+        <article class="siteArticle">
+            <h2><?=$article['titArt'];?></h2>
+            <small>Créé le <?=(new DateTimeImmutable($article['dtCre']))->format('d/m/Y');?></small>
+            <?php if ($article['imgArt']): ?>
+                <img src="images/<?=$article['imgArt'];?>" alt="">
+                <?php endif; ?>             
+                <?php if ($article['AbsArt']): ?>
+                <p><?=$article['AbsArt'];?></p>
+                <?php endif; ?>    
+                <p><?=$article['txtArt'];?></p>
+        </article>
+        <div class='CommentBox'>
+            <form action="article.php?id=<?=$article['idArt'];?>" method="post">
+                <div>
+                    <textarea name="comments" id="comments" >Your comment here
+                    </textarea>
+                </div>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <div class='CommentDisplay'>
+            <h2>Commentaires</h2>
+             <?php foreach( $comments as $comment): ?> 
+            <div class="comment">
+                <small>posté par <?=$comment['frstUsr'] ?> le <?=$comment['dtCre'] ?> </small>
+                <p><?=$comment['txtCom'];?></p>
+            </div>
+            <?php endforeach; ?>
+        </div>    
+    </main>
+</body>
+
+
+

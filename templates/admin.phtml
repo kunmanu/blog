@@ -1,0 +1,32 @@
+<body>
+    <main>
+        <table>
+            <thead>
+                <tr>
+                    <th scope="col">Titre</th>
+                    <th scope="col">Date de création</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($articles as $article): ?>
+                    <tr id='article-<?=$article['idArt'];?>'>
+                        <td><?=$article['titArt'];?></td>
+                        <td><?=(new DateTimeImmutable($article['dtCre']))->format('d/m/Y');?></td>
+                        <td>
+                            <?php if ($article['imgArt']): ?>
+                                <img src="images/<?=$article['imgArt'];?>" alt="">
+                        <?php endif; ?>
+                    </td>
+                    <td>
+                        <a href="edit_article.php?id=<?=$article['idArt'];?>"><i class="fa-solid fa-pen-to-square"></i> Modifier</a>
+                        <a class="delete-article-button" data-ajax="delete_article_ajax.php?id=<?=$article['idArt'];?>" href="delete_article.php?id=<?=$article['idArt'];?>"><i class="fa-solid fa-trash-can"></i> Supprimer</a>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </body>
+        </table>
+    </main>
+    
+</body>

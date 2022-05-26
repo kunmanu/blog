@@ -1,0 +1,23 @@
+    <main>
+        <section>
+            <h2>Les derniers articles</h2>
+            <?php foreach ($articles as $article): ?>
+                <article>
+                    <h3><?=$article['titArt'];?></h3>
+                    <small>Créé le <?=(new DateTimeImmutable($article['dtCre']))->format('d/m/Y');?></small>
+                    
+                    <?php if ($article['imgArt']): ?>
+                        <img src="images/<?=$article['imgArt'];?>" alt="">
+                    <?php endif; ?>
+
+                    <p><?=$article['AbsArt']?$article['AbsArt']:substr($article['txtArt'],0,150) . ' [...]';?> </p>
+                    <a href="article.php?id=<?=$article['idArt'];?>">Lire tout l'article</a>
+                </article>
+            <?php // } ?>
+            <?php endforeach; ?>
+        </section>
+    </main>
+    <footer>
+        
+    </footer>
+</body>

@@ -1,0 +1,25 @@
+<body>
+    <main>
+        <form action="sign_in.php" method="POST" >
+            <fieldset>
+                <legend>Se connecter</legend>
+                <?php if (isset($error)): ?>
+                        <p class="error"><?=$error;?></p>
+                    <?php endif; ?>
+                
+                <div>  
+                    <label for="email">votre email/login : </label><br>
+                    <input type="text" id="email" name="email"><br>
+                </div>
+                <div>
+                    <label for="plainPassword">votre mot de passe : </label><br>
+                    <input type="password" id="plainPassword" name="plainPassword"><br>
+                </div>
+                <div>
+                    <input type="submit" value="Se connecter">
+                </div>
+
+            </fieldset>
+        </form>
+    </main>
+</body>
