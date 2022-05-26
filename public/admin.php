@@ -7,14 +7,14 @@ session_start();
 include '../app/config.php';
 include '../lib/functions.php';
 include_once '../src/core/Database.php';
-include_once '../src/Model/CommentModel.php';
+
 require ('../src/Model/autoload.php');
 
 
 // Vérification du rôle
 if (!hasRole(ROLE_ADMIN)) {
     http_response_code(403);
-    var_dump($_SESSION);
+    // var_dump($_SESSION);
     echo 'Accès interdit';
     exit;
 }
