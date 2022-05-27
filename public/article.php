@@ -33,6 +33,8 @@ $errors = [];
 // Gestion du formulaire d'ajout de commentaires
 ////////////////////////////////////////////////
 
+
+
 if (!empty($_POST)) {
 
     // Récupération des données du formulaire
@@ -42,12 +44,14 @@ if (!empty($_POST)) {
     if (strlen($content) == 0) {
         $errors['comments'] = 'Vous devez écrire un commentaire';
     }
-
-    // S'il n'y a pas d'erreurs
+    if ($idUser = NULL){
+        $errors['comments'] = 'Identifiez vous pour poster un commentaire';
+    }
+        // S'il n'y a pas d'erreurs
     if (empty($errors)) {
 
-        
-        $idUser = getUserId();
+        $userModel = new UserModel();
+        $idUser = $userModel->getUserId();
 
         // Appel de la méthode insertComment()
         $commentModel = new CommentModel();

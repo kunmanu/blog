@@ -8,7 +8,8 @@ include '../app/config.php';
 include '../lib/functions.php';
 require ('../src/Model/autoload.php');
 // On déconnecte l'utilisateur
-logout();
+$userModel = new UserModel();
+$user = $userModel -> logout();
 
 // On le redirige vers l'accueil
 header('Location: home.php');

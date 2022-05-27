@@ -64,7 +64,7 @@ if (!empty($_POST)) {
         $userModel = new UserModel();
         $User = $userModel -> addUser($firstname, $lastname, $email,$role, $hash);
 
-        // On redirige l'internaute (pour l'instant vers une page de confirmation)
+        // On redirige l'internaute
         header('Location: home.php');
         exit;
     }

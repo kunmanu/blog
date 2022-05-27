@@ -11,6 +11,9 @@
                 <?php endif; ?>    
                 <p><?=$article['txtArt'];?></p>
         </article>
+        <?php
+
+        ?>
         <div class='CommentBox'>
             <form action="article.php?id=<?=$article['idArt'];?>" method="post">
                 <div>
@@ -20,8 +23,13 @@
                 <input type="submit" value="Submit">
             </form>
         </div>
+
+        <?php if (isset($errors['comment'])): ?>
+        <p class="error"><?=$errors['comment'];?></p>
+        <?php endif; ?>
         <div class='CommentDisplay'>
             <h2>Commentaires</h2>
+
              <?php foreach( $comments as $comment): ?> 
             <div class="comment">
                 <small>posté par <?=$comment['frstUsr'] ?> le <?=$comment['dtCre'] ?> </small>

@@ -31,26 +31,26 @@ function getPDOConnection()
 ///////////////// USERS /////////////////
 /////////////////////////////////////////
 
-function getUserByEmail(string $email) 
-{
-    // Connexion à la base de données
-    $pdo = getPDOConnection();
-
-    // Préparation de la requête
-    $sql = 'SELECT *
-            FROM user
-            WHERE mailUsr = ?';
-
-    $pdoStatement = $pdo->prepare($sql);
-
-    // Exécution de la requête
-    $pdoStatement->execute([$email]);
-
-    // Récupération d'UN SEUL résultat : un seul utilisateur possède cet email
-    $user = $pdoStatement->fetch();
-
-    return $user;
-}
+//function getUserByEmail(string $email)
+//{
+//    // Connexion à la base de données
+//    $pdo = getPDOConnection();
+//
+//    // Préparation de la requête
+//    $sql = 'SELECT *
+//            FROM user
+//            WHERE mailUsr = ?';
+//
+//    $pdoStatement = $pdo->prepare($sql);
+//
+//    // Exécution de la requête
+//    $pdoStatement->execute([$email]);
+//
+//    // Récupération d'UN SEUL résultat : un seul utilisateur possède cet email
+//    $user = $pdoStatement->fetch();
+//
+//    return $user;
+//}
 
 /**
  * Ajoute un user
@@ -91,45 +91,46 @@ function getUserByEmail(string $email)
  * @param string $email L'email rentré par l'utilisateur
  * @param string $password Le mot de passe rentré par l'utilisateur
  */
-function checkUser(string $email, string $password)
-{
-    // On récupère l'utilisateur à partir de son email
-    $user = getUserByEmail($email);
-
-    // Si on trouve bien un utilisateur...
-    if ($user) {
-
-        // On vérifie son mot de passe
-        if (password_verify($password, $user['hashUsr'])) {
-
-            // Tout est ok, on retourne l'utilisateur
-            return $user;
-        }
-    }
-
-    // Si l'email ou le mot de passe est incorrect...
-    return false;
-}
+//function checkUser(string $email, string $password)
+//{
+//    // On récupère l'utilisateur à partir de son email
+//    $userModel = new UserModel();
+//    $user = $userModel ->getUserByEmail($email);
+//
+//    // Si on trouve bien un utilisateur...
+//    if ($user) {
+//
+//        // On vérifie son mot de passe
+//        if (password_verify($password, $user['hashUsr'])) {
+//
+//            // Tout est ok, on retourne l'utilisateur
+//            return $user;
+//        }
+//    }
+//
+//    // Si l'email ou le mot de passe est incorrect...
+//    return false;
+//}
 
 /**
  * Enregistre les données d el'utilisateur en session
  */
-function registerUser(string $id, string $firstname, string $lastname, string $email, string $role)
-{
-    // On commence par vérifier qu'une session est bien démarrée
-    if (session_status() == PHP_SESSION_NONE) {
-        session_start();
-    }
-
-    // Puis on enregistre les données de l'utilisateur en session
-    $_SESSION['user'] = [
-        'id' => $id,
-        'firstname' => $firstname,
-        'lastname' => $lastname,
-        'email' => $email,
-        'role' => $role
-    ];
-}
+//function registerUser(string $id, string $firstname, string $lastname, string $email, string $role)
+//{
+//    // On commence par vérifier qu'une session est bien démarrée
+//    if (session_status() == PHP_SESSION_NONE) {
+//        session_start();
+//    }
+//
+//    // Puis on enregistre les données de l'utilisateur en session
+//    $_SESSION['user'] = [
+//        'id' => $id,
+//        'firstname' => $firstname,
+//        'lastname' => $lastname,
+//        'email' => $email,
+//        'role' => $role
+//    ];
+//}
 
 /**
  * Détermine si l'utilisateur est connecté ou non
@@ -148,31 +149,31 @@ function isConnected(): bool
 /**
  * Déconnecte l'utilisateur
  */
-function logout()
-{
-    // Si l'utilisateur est connecté...
-    if (isConnected()) {
-
-        // On efface nos données en session
-        $_SESSION['user'] = null;
-
-        // On ferme la session 
-        session_destroy();
-    }
-}
+//function logout()
+//{
+//    // Si l'utilisateur est connecté...
+//    if (isConnected()) {
+//
+//        // On efface nos données en session
+//        $_SESSION['user'] = null;
+//
+//        // On ferme la session
+//        session_destroy();
+//    }
+//}
 
 /**
  * Retourne l'id de l'utilisateur connecté
  */
-function getUserId()
-{
-    // Si l'utilisateur est connecté...
-    if (!isConnected()) {
-        return null;
-    }
-
-    return $_SESSION['user']['id'];
-}
+//function getUserId()
+//{
+//    // Si l'utilisateur est connecté...
+//    if (!isConnected()) {
+//        return null;
+//    }
+//
+//    return $_SESSION['user']['id'];
+//}
 
 /**
  * Retourne le prénom de l'utilisateur connecté
