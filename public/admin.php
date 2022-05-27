@@ -22,6 +22,8 @@ if (!hasRole(ROLE_ADMIN)) {
 // Traitements : récupérer les articles
 $articleModel = new ArticleModel();
 $articles = $articleModel -> getAllArticles();
+
+
 // Affichage : inclusion du fichier de template
 $template = 'admin';
 $h1title = 'Admin';

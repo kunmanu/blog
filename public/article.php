@@ -40,13 +40,20 @@ if (!empty($_POST)) {
     // Récupération des données du formulaire
     $content = trim($_POST['comments']);
 
+    //validation utilsateur
+//    $userModel = new UserModel();
+//    $connected = $userModel->isConnected();
+
+    if (!isset ($_SESSION['user'])){
+        $errors['comments'] = 'Connectez vous pour poster un commentaire';
     // Validation du formulaire, le champ "content" doit être rempli
+
+    }
     if (strlen($content) == 0) {
         $errors['comments'] = 'Vous devez écrire un commentaire';
     }
-    if ($idUser = NULL){
-        $errors['comments'] = 'Identifiez vous pour poster un commentaire';
-    }
+
+
         // S'il n'y a pas d'erreurs
     if (empty($errors)) {
 
