@@ -7,10 +7,14 @@ session_start();
 include '../app/config.php';
 include '../lib/functions.php';
 include_once '../src/core/Database.php';
+include_once '../src/core/AbstractModel.php';
+
 require ('../src/Model/autoload.php');
 // Traitements : récupérer les articles
 $articleModel = new ArticleModel();
 $articles = $articleModel -> getAllArticles();
+
+var_dump(Database::getcountPDO());
 
 // Affichage : inclusion du template
 $template = 'home';

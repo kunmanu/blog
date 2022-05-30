@@ -1,9 +1,19 @@
 <?php
 class Database {
 
+    private PDO $pdo;
+    static private int $countPdo=0;
+
+
+    function __construct()
+    {
+        $this->initPDOConnection();
+        self::$countPdo++;
+    }
+
 
     //methode
-    function getPDOConnection()
+    function initPDOConnection(): PDO
     {
         // Connexion à la base de données
         $dsn = 'mysql:dbname='.DB_NAME.';host='.DB_HOST.';charset=utf8'; // DSN : Data Source Name (informations de connexion à la BDD)
@@ -14,14 +24,14 @@ class Database {
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC // Mode de récupération des résultats
         ];
 
-        $pdo = new PDO($dsn, $user, $password, $options); // Création d'un objet de la classe PDO
+        $this ->pdo = new PDO($dsn, $user, $password, $options); // Création d'un objet de la classe PDO
 
-        return $pdo;
+        return $this->pdo;
     }
 
     function executeQuery(string $sql, array $values =[] ){
-        $pdo = $this->getPDOConnection();
-        $pdoStatement = $pdo->prepare($sql);
+
+        $pdoStatement = $this->pdo->prepare($sql);
         $pdoStatement -> execute($values);
         return $pdoStatement;
     }
@@ -34,6 +44,11 @@ class Database {
         $pdoStatement = $this -> executeQuery($sql,$values);
         return $pdoStatement -> fetch();
 
+    }
+
+    static function getcountPDO()
+    {
+        return self::$countPdo;
     }
 
 

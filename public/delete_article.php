@@ -7,7 +7,9 @@ session_start();
 include '../app/config.php';
 include '../lib/functions.php';
 include_once '../src/core/Database.php';
-require ('../src/Model/autoload.php');
+include_once '../src/core/AbstractModel.php';
+
+include ('../src/Model/autoload.php');
 
 // Vérification du rôle
 if (!hasRole(ROLE_ADMIN)) {
