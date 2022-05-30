@@ -4,6 +4,7 @@
 session_start();
 
 // Inclusion des dépendances
+include '../vendor/autoload.php';
 include '../app/config.php';
 include '../lib/functions.php';
 include_once '../src/core/Database.php';
@@ -14,7 +15,7 @@ require ('../src/Model/autoload.php');
 $articleModel = new ArticleModel();
 $articles = $articleModel -> getAllArticles();
 
-var_dump(Database::getcountPDO());
+dump($_SESSION);
 
 // Affichage : inclusion du template
 $template = 'home';

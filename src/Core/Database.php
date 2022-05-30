@@ -1,14 +1,18 @@
 <?php
 class Database {
 
-    private PDO $pdo;
+    static private ?PDO $pdo  = null;
     static private int $countPdo=0;
 
 
     function __construct()
     {
-        $this->initPDOConnection();
-        self::$countPdo++;
+        if (self::$pdo == null){
+            self::$pdo=$this->initPDOConnection();
+            self::$countPdo++;
+        }
+
+
     }
 
 
@@ -24,14 +28,14 @@ class Database {
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC // Mode de récupération des résultats
         ];
 
-        $this ->pdo = new PDO($dsn, $user, $password, $options); // Création d'un objet de la classe PDO
 
-        return $this->pdo;
+        self::$pdo = new PDO($dsn, $user, $password, $options);
+        return self::$pdo;
     }
 
     function executeQuery(string $sql, array $values =[] ){
 
-        $pdoStatement = $this->pdo->prepare($sql);
+        $pdoStatement = self::$pdo->prepare($sql);
         $pdoStatement -> execute($values);
         return $pdoStatement;
     }

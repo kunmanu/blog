@@ -1,5 +1,7 @@
 // Sélection de tous les boutons de suppression
 const deleteButtons = document.querySelectorAll('.delete-article-button');
+console.log(deleteButtons);
+
 
 // On parcours les boutons...
 for (const button of deleteButtons) {
@@ -42,5 +44,4 @@ for (const button of deleteButtons) {
         }
     });
     console.log('123')
-    console.log(data)
 }
