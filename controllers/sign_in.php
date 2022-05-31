@@ -1,15 +1,15 @@
 <?php 
 
 // On démarre la session pour être certain qu'elle est démarrée
-session_start();
+//session_start();
 
 // Inclusion des dépendances
-include '../app/config.php';
-include '../lib/functions.php';
-include '../src/core/Database.php';
-include_once '../src/core/AbstractModel.php';
-
-require ('../src/Model/autoload.php');
+//include '../app/config.php';
+//include '../lib/functions.php';
+//include '../src/core/Database.php';
+//include_once '../src/core/AbstractModel.php';
+//
+//require ('../src/Model/autoload.php');
 // Initialisations
 $email = '';
 
@@ -33,7 +33,7 @@ if (!empty($_POST)) {
 
     
         // Redirection pour le moment vers la page d'accueil du site
-        header('Location: home.php');
+        header('Location:'.buildUrl("home"));
         exit;
     } 
         

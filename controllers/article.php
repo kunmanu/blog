@@ -1,15 +1,6 @@
+
 <?php
 
-// On démarre la session pour être certain qu'elle est démarrée
-session_start();
-
-// Inclusion des dépendances
-include '../app/config.php';
-include '../lib/functions.php';
-include_once '../src/core/Database.php';
-include_once '../src/core/AbstractModel.php';
-
-include ('../src/Model/autoload.php');
 ////////////////////////////////////////////////
 // Récupération de l'id de l'article dans l'URL
 ////////////////////////////////////////////////
@@ -66,7 +57,8 @@ if (!empty($_POST)) {
         $commentModel = new CommentModel();
         $comment = $commentModel -> insertComment ($content,$idUser, $idArticle);
         // Redirection pour perdre les données en POST et revenir en GET pour ne pas insérer plusieurs fois le même commentaire si l'internaute fait F5
-        header('Location: article.php?id=' . $idArticle);
+         header('location:'.buildUrl('article', ['id'=>$article['idArt']]));
+//        header('Location: article.php?id=' . $idArticle);
         exit;
     }
 }

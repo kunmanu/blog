@@ -11,9 +11,12 @@
                     <?php endif; ?>
 
                     <p><?=$article['AbsArt']?$article['AbsArt']:substr($article['txtArt'],0,150) . ' [...]';?> </p>
-                    <a href="article.php?id=<?=$article['idArt'];?>">Lire tout l'article</a>
+
+                    <a href="<?=buildUrl("article",['id'=>$article['idArt']]);?> ">Lire tout l'article</a>
+
+
                 </article>
-            <?php // } ?>
+
             <?php endforeach; ?>
         </section>
     </main>

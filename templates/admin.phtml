@@ -21,8 +21,8 @@
                         <?php endif; ?>
                     </td>
                     <td>
-                        <a href="edit_article.php?id=<?=$article['idArt'];?>"><i class="fa-solid fa-pen-to-square"></i> Modifier</a>
-                        <a class="delete-article-button" data-ajax="delete_article_ajax.php?id=<?=$article['idArt'];?>" href="delete_article.php?id=<?=$article['idArt'];?>"><i class="fa-solid fa-trash-can"></i> Supprimer</a>
+                        <a href="<?= buildUrl('edit_article', ['id'=>$article['idArt']])?>"><i class="fa-solid fa-pen-to-square"></i> Modifier</a>
+                        <a class="delete-article-button" data-ajax="<?= buildUrl('delete_article_ajax', ['id'=>$article['idArt']]) ?>" href="<?= buildUrl('delete_article', ['id'=>$article['idArt']]) ?>"><i class="fa-solid fa-trash-can"></i> Supprimer</a>
                     </td>
                 </tr>
                 <?php endforeach; ?>
@@ -31,3 +31,6 @@
     </main>
     
 </body>
+
+
+

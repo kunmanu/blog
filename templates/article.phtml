@@ -15,7 +15,7 @@
 
         ?>
         <div class='CommentBox'>
-            <form action="article.php?id=<?=$article['idArt'];?>" method="post">
+            <form action="<?=buildUrl('article', ['id'=>$article['idArt']])?>" method="post">
                 <div>
                     <textarea name="comments" id="comments" >Your comment here
                     </textarea>

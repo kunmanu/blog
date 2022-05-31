@@ -1,15 +1,15 @@
 <?php
 
 // On démarre la session pour être certain qu'elle est démarrée
-session_start();
-
-// Inclusion des dépendances
-include '../app/config.php';
-include '../lib/functions.php';
-include_once '../src/core/Database.php';
-include_once '../src/core/AbstractModel.php';
-
-require ('../src/Model/autoload.php');
+//session_start();
+//
+//// Inclusion des dépendances
+//include '../app/config.php';
+//include '../lib/functions.php';
+//include_once '../src/core/Database.php';
+//include_once '../src/core/AbstractModel.php';
+//
+//require ('../src/Model/autoload.php');
 
 // Vérification du rôle
 if (!hasRole(ROLE_ADMIN)) {
@@ -82,7 +82,7 @@ if (!empty($_POST)) {
         $article = $articleModel -> editArticle($title, $abstract, $content, $image, $idArticle);
 
         // On redirige l'internaute (pour l'instant vers une page de confirmation)
-        header('Location: admin.php');
+        header('Location:'.buildUrl('admin'));
         exit;
     }
 }
@@ -92,3 +92,4 @@ $template = 'Modify Article';
 $h1title = 'Modify Article';
 $template = 'edit_article';
 include '../templates/base_admin.phtml';
+

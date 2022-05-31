@@ -9,6 +9,15 @@ const ROLE_USER = 'USER';
 const ROLE_ADMIN = 'ADMIN';
 
 
+function buildUrl(string $page, array $params = [])
+{
+
+    if (empty($params)){
+        return "index.php?page=".$page;
+    }
+    return "index.php?page=".$page."&".http_build_query($params);
+}
+
 
 function getPDOConnection()
 {

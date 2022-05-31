@@ -1,14 +1,14 @@
 <?php 
 
-// On démarre la session pour être certain qu'elle est démarrée
-session_start();
-
-// Inclusion des dépendances 
-include '../app/config.php';
-include '../lib/functions.php';
-include_once '../src/core/Database.php';
-include_once '../src/core/AbstractModel.php';
-include ('../src/Model/autoload.php');
+//// On démarre la session pour être certain qu'elle est démarrée
+//session_start();
+//
+//// Inclusion des dépendances
+//include '../app/config.php';
+//include '../lib/functions.php';
+//include_once '../src/core/Database.php';
+//include_once '../src/core/AbstractModel.php';
+//include ('../src/Model/autoload.php');
 
 // Vérification du rôle
 if (!hasRole(ROLE_ADMIN)) {
@@ -53,7 +53,7 @@ if (!empty($_POST)) {
 
 
         // On redirige l'internaute (pour l'instant vers une page de confirmation)
-        header('Location: admin.php');
+        header('Location:'. buildUrl('admin'));
         exit;
     }
 }

@@ -1,16 +1,16 @@
 <?php 
 
-// On démarre la session pour être certain qu'elle est démarrée
-session_start();
-
-// Inclusion des dépendances
-include '../app/config.php';
-include '../lib/functions.php';
-include_once '../src/core/Database.php';
-include_once '../src/Model/UserModel.php';
-include_once '../src/core/AbstractModel.php';
-
-require ('../src/Model/autoload.php');
+//// On démarre la session pour être certain qu'elle est démarrée
+//session_start();
+//
+//// Inclusion des dépendances
+//include '../app/config.php';
+//include '../lib/functions.php';
+//include_once '../src/core/Database.php';
+//include_once '../src/Model/UserModel.php';
+//include_once '../src/core/AbstractModel.php';
+//
+//require ('../src/Model/autoload.php');
 
 // Initialisations
 $errors = [];
@@ -67,7 +67,7 @@ if (!empty($_POST)) {
         $User = $userModel -> addUser($firstname, $lastname, $email,$role, $hash);
 
         // On redirige l'internaute
-        header('Location: home.php');
+        header('Location:'.buildUrl("home"));
         exit;
     }
 }

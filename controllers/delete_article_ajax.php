@@ -1,15 +1,15 @@
 <?php 
 
 // On démarre la session pour être certain qu'elle est démarrée
-session_start();
+//session_start();
+//
+//// Inclusion des dépendances
+//include '../app/config.php';
+//include '../lib/functions.php';
+//include_once '../src/core/Database.php';
+//include_once '../src/core/AbstractModel.php';
 
-// Inclusion des dépendances
-include '../app/config.php';
-include '../lib/functions.php';
-include_once '../src/core/Database.php';
-include_once '../src/core/AbstractModel.php';
-
-include ('../src/Model/autoload.php');
+//include ('../src/Model/autoload.php');
 // Vérification du rôle
 if (!hasRole(ROLE_ADMIN)) {
     http_response_code(403);

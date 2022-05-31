@@ -1,6 +1,6 @@
 <body>
     <main>
-        <form method="POST" action="edit_article.php?id=<?=$idArticle;?>">
+        <form method="POST" action="<?= buildUrl('edit_article', ['id'=>$article['idArt']]) ?>">
             <fieldset>
                 <legend>Modifier un article</legend>
                 <div>
@@ -28,6 +28,7 @@
                 <input type="submit" value="Enregistrer">
             </fieldset>
         </form>
-        <!-- <?php var_dump($article) ?> -->
+
     </main>
 </body>
+

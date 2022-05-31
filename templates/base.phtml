@@ -19,14 +19,14 @@
                     </div>
                     <div class="siteHeader-content-btn">
                         <?php if (hasRole(ROLE_ADMIN) ):  ?>
-                            <a href="add_article.php">
+                            <a href="<?=buildUrl("add_article")?>">
                                 <input type="submit" value="Add article">
                             </a>
-                            <a href="admin.php"> 
+                            <a href="<?=buildUrl("admin")?>">
                                 <input type="submit" value="Dashboard">
                             </a>
                             <?php endif; ?>
-                            <a href="logout.php" >
+                            <a href="<?=buildUrl("logout")?>" >
                                 <input type="submit" value="Disconnect">
                             </a>
                     </div>
@@ -36,21 +36,21 @@
             <nav class="siteHeader-siteNav">
                 <ul class="siteHeader-siteNav-ul">
                     <li class="siteHeader-siteNav-ul-li">
-                        <a href="home.php">home</a>
+                        <a href="<?=buildUrl("home")?>">home</a>
                     </li>
                     <?php if (!isConnected()):  ?>
                         <li class="siteHeader-siteNav-ul-li">
-                            <a href="sign_in.php">sign in</a>
+                            <a href="<?=buildUrl("sign_in")?>">sign in</a>
                         </li>
                         <li class="siteHeader-siteNav-ul-li">
-                            <a href="sign_up.php">sign up</a>
+                            <a href="<?=buildUrl("sign_up")?>">sign up</a>
                         </li>
                     <?php endif; ?>
                     <?php if (isConnected()&& hasRole(ROLE_ADMIN) ):  ?>
                         <li class="siteHeader-siteNav-ul-li">
-                            <a href="admin.php">Dashboard</a></li>
+                            <a href="<?=buildUrl("admin")?>">Dashboard</a></li>
                         <li class="siteHeader-siteNav-ul-li">
-                            <a href="add_article.php">add article</a></li>
+                            <a href="<?=buildUrl("add_article")?>">add article</a></li>
                     <?php endif; ?>
                 </ul>
             </nav>

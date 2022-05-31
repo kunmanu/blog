@@ -1,6 +1,6 @@
 <body>
     <main>
-        <form action="sign_in.php" method="POST" >
+        <form action="<?=buildUrl("sign_in")?>" method="POST" >
             <fieldset>
                 <legend>Se connecter</legend>
                 <?php if (isset($error)): ?>
